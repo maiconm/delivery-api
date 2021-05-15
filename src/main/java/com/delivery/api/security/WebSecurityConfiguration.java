@@ -32,7 +32,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		
-		String cryptedPassword = this.passwordEncoder().encode("123456");
+		String cryptedPassword = this.passwordEncoder().encode("123");
 		
 		auth.inMemoryAuthentication()
 			.withUser("maicon")
