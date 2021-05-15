@@ -36,7 +36,7 @@ public class Produto {
 	
 	@Column(length = 5000)
 	private String descricao;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_restaurante")
 	private Restaurante restaurante;

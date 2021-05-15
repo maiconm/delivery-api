@@ -84,8 +84,8 @@ public class ProdutoController {
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public ProdutoOutputDTO adicionar(@RequestBody @Valid ProdutoInputDTO produtoInputDTO) {
-		
-		Restaurante restaurante = restauranteService.buscar(produtoInputDTO.getIdRestaurante());
+	
+		Restaurante restaurante = restauranteService.buscar(produtoInputDTO.getRestaurante());
 
 		Produto produto = produtoIntputMapper.mapearEntity(produtoInputDTO);
 
