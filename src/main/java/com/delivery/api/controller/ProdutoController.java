@@ -99,12 +99,12 @@ public class ProdutoController {
 		
 	}
 	
-	@PutMapping("/{id}")
-	public ProdutoOutputDTO alterar(@PathVariable Long id, @RequestBody @Valid ProdutoInputDTO produtoInputDTO) {
+	@PutMapping("/{uuid}")
+	public ProdutoOutputDTO alterar(@PathVariable String uuid, @RequestBody @Valid ProdutoInputDTO produtoInputDTO) {
 		
 		Produto produto = produtoIntputMapper.mapearEntity(produtoInputDTO);
 		
-		produto = produtoService.atualizar(id, produto);
+		produto = produtoService.atualizar(uuid, produto);
 		
 		ProdutoOutputDTO produtoOutputDTO = produtoOutputMapper.mapearEntity(produto);
 		
@@ -112,10 +112,10 @@ public class ProdutoController {
 		
 	}
 	
-	@PatchMapping("/{id}")
-	public ProdutoOutputDTO ajustar(@PathVariable Long id, @RequestBody Map<String, Object> campos) {
+	@PatchMapping("/{uuid}")
+	public ProdutoOutputDTO ajustar(@PathVariable String uuid, @RequestBody Map<String, Object> campos) {
 		
-		Produto produto = produtoService.ajustar(id, campos);
+		Produto produto = produtoService.ajustar(uuid, campos);
 		
 		ProdutoOutputDTO produtoOutputDTO = produtoOutputMapper.mapearEntity(produto);
 		

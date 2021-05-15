@@ -60,11 +60,11 @@ public class ProdutoService {
 		return produtoRepository.save(produto);
 	}
 	
-	public Produto atualizar(Long id, Produto produto) {
+	public Produto atualizar(String uuid, Produto produto) {
 		
-		Produto produtoAtual = this.buscar(id);
+		Produto produtoAtual = this.buscarPorUUID(uuid);
 		
-		BeanUtils.copyProperties(produto, produtoAtual, "id");
+		BeanUtils.copyProperties(produto, produtoAtual, "uuid", "id");
 		
 		return this.salvar(produtoAtual);
 			
@@ -72,9 +72,9 @@ public class ProdutoService {
 	
 
 	
-	public Produto ajustar(Long id, Map<String, Object> campos) {
+	public Produto ajustar(String uuid, Map<String, Object> campos) {
 		
-		Produto produtoAtual = this.buscar(id);
+		Produto produtoAtual = this.buscarPorUUID(uuid);
 		
 		Utils.merge(produtoAtual, campos);
 		
