@@ -84,11 +84,11 @@ public class ProdutoService {
 		
 	}
 	
-	public boolean excluir(Long id) {
+	public boolean excluir(String uuid) {
 		
 		try {
 			
-			produtoRepository.deleteById(id);
+			produtoRepository.deleteByUuid(uuid);
 			
 		} catch (EmptyResultDataAccessException ex) {
 			throw new NotFoundException("Produto não encontrado");

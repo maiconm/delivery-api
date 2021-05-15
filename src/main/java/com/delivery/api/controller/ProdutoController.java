@@ -123,10 +123,10 @@ public class ProdutoController {
 		
 	}
 	
-	@DeleteMapping("/{id}")
-	public ResponseEntity<Produto> deletarProduto(@PathVariable Long id) {
+	@DeleteMapping("/{uuid}")
+	public ResponseEntity<Produto> deletarProduto(@PathVariable String uuid) {
 		
-		produtoService.excluir(id);
+		produtoService.excluir(uuid);
 		
 		return ResponseEntity.noContent().build();
 		
