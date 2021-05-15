@@ -17,14 +17,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.delivery.api.dto.RestauranteOutputDTO;
 import com.delivery.api.dto.RestauranteOutputResumidoDTO;
 import com.delivery.api.entity.Restaurante;
+import com.delivery.api.mapper.RestauranteOutputMapper;
 import com.delivery.api.mapper.RestauranteOutputResumidoMapper;
 import com.delivery.api.service.RestauranteService;
 
 @RestController
 @RequestMapping("/restaurantes")
 public class RestauranteController {
+	
+	@Autowired
+	private RestauranteOutputMapper restauranteOutputMapper;
 	
 	@Autowired
 	private RestauranteService restauranteService;
@@ -44,11 +49,13 @@ public class RestauranteController {
 	
 	@GetMapping("/{id}")
 	@ResponseStatus(code = HttpStatus.OK)
-	public Restaurante consultaRestaurante(@PathVariable Long id) {
+	public RestauranteOutputDTO consultaRestaurante(@PathVariable Long id) {
 
 		Restaurante restaurante = restauranteService.buscar(id);
 		
-		return restaurante;
+		RestauranteOutputDTO restauranteOutput = restauranteOutputMapper.mapearEntity(restaurante);
+		
+		return restauranteOutput;
 		
 	}
 	
