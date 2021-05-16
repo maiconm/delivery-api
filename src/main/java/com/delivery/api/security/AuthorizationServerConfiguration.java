@@ -30,9 +30,9 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 				.withClient("delivery")
 				.secret(cryptedPassword)
 				.scopes("write", "read")
-				.accessTokenValiditySeconds(60 * 60 * 24)
+				.accessTokenValiditySeconds(60 * 10)
 			.and()
-				.withClient("checkToken")
+				.withClient("checktoken")
 				.secret(cryptedPassword);
 	}
 	
@@ -44,7 +44,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 	@Override
 	public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
 		
-		security.checkTokenAccess("permitAll");
+		security.checkTokenAccess("permitAll()");
 		
 	}
 }
