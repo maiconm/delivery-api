@@ -3,6 +3,7 @@ package com.delivery.api.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
@@ -13,6 +14,9 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
+	
+	@Autowired
+	private UserDetailsService userDetailService;
 	
 	@Autowired
 	PasswordEncoder passwordEncoder;
@@ -29,8 +33,10 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 			.inMemory()
 				.withClient("delivery")
 				.secret(cryptedPassword)
+				.authorizedGrantTypes("password", "refresh_token")
 				.scopes("write", "read")
 				.accessTokenValiditySeconds(60 * 10)
+				.refreshTokenValiditySeconds(60 * 60 * 24)
 			.and()
 				.withClient("checktoken")
 				.secret(cryptedPassword);
@@ -38,7 +44,10 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 	
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-		endpoints.authenticationManager(authenticationManager);
+		endpoints
+			.authenticationManager(authenticationManager)
+			.userDetailsService(userDetailService)
+			.reuseRefreshTokens(false);
 	}
 	
 	@Override
