@@ -17,16 +17,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.delivery.api.dto.RestauranteInputDTO;
 import com.delivery.api.dto.RestauranteOutputDTO;
 import com.delivery.api.dto.RestauranteOutputResumidoDTO;
 import com.delivery.api.entity.Restaurante;
+import com.delivery.api.entity.Usuario;
+import com.delivery.api.mapper.RestauranteInputMapper;
 import com.delivery.api.mapper.RestauranteOutputMapper;
 import com.delivery.api.mapper.RestauranteOutputResumidoMapper;
+import com.delivery.api.service.JpaUserDetailService;
 import com.delivery.api.service.RestauranteService;
 
 @RestController
 @RequestMapping("/restaurantes")
 public class RestauranteController {
+	
+	@Autowired
+	private JpaUserDetailService jpaUserDetailService;
+	
+	@Autowired
+	private RestauranteInputMapper restauranteInputMapper;
 	
 	@Autowired
 	private RestauranteOutputMapper restauranteOutputMapper;
@@ -61,32 +71,46 @@ public class RestauranteController {
 	
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public Restaurante adicionar(@RequestBody Restaurante restaurante) {
+	public RestauranteOutputDTO adicionar(@RequestBody RestauranteInputDTO restauranteInput) {
 		
-		return restauranteService.salvar(restaurante);
+		Usuario usuario = jpaUserDetailService.getUsuarioByEmail(restauranteInput.getUsuario());
+		
+		Restaurante restaurante = restauranteInputMapper.mapearEntity(restauranteInput);
+		
+		restaurante.setUsuario(usuario);
+		
+		Restaurante restauranteSalvo = restauranteService.salvar(restaurante);
+		
+		return restauranteOutputMapper.mapearEntity(restauranteSalvo);
 		
 	}
 	
 	@PutMapping("/{id}")
-	public Restaurante alterar(@PathVariable Long id, @RequestBody Restaurante restaurante) {
+	public RestauranteOutputDTO alterar(@PathVariable Long id, @RequestBody RestauranteInputDTO restauranteInput) {
+		
+		Restaurante restaurante = restauranteInputMapper.mapearEntity(restauranteInput);
 		
 		restaurante = restauranteService.atualizar(id, restaurante);
 		
-		return restaurante;
+		RestauranteOutputDTO restauranteOutput = restauranteOutputMapper.mapearEntity(restaurante);
+		
+		return restauranteOutput;
 		
 	}
 	
 	@PatchMapping("/{id}")
-	public Restaurante ajustar(@PathVariable Long id, @RequestBody Map<String, Object> campos) {
+	public RestauranteOutputDTO ajustar(@PathVariable Long id, @RequestBody Map<String, Object> campos) {
 		
 		Restaurante restaurante = restauranteService.ajustar(id, campos);
 		
-		return restaurante;
+		RestauranteOutputDTO restauranteOutput = restauranteOutputMapper.mapearEntity(restaurante);
+		
+		return restauranteOutput;
 		
 	}
 	
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Restaurante> deletarRestaurante(@PathVariable Long id) {
+	public ResponseEntity<RestauranteOutputDTO> deletarRestaurante(@PathVariable Long id) {
 		
 		restauranteService.excluir(id);
 		

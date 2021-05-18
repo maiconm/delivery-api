@@ -46,7 +46,7 @@ public class RestauranteService {
 		
 		Restaurante restauranteAtual = this.buscar(id);
 			
-		BeanUtils.copyProperties(restaurante, restauranteAtual, "id");
+		BeanUtils.copyProperties(restaurante, restauranteAtual, "id", "produtos", "usuario");
 		
 		return this.salvar(restauranteAtual);
 			
