@@ -38,10 +38,6 @@ public class JpaUserDetailService implements UserDetailsService {
 		
 	}
 	
-	public Usuario getUsuarioByEmail(String email) {
-		return usuarioRepository.selectByEmail(email);
-	}
-	
 	@Getter
 	public static class AuthUser extends User {
 		 

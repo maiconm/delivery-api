@@ -21,8 +21,6 @@ public class CEPService {
 			
 			ResponseEntity<EnderecoDTO> response = restTemplate.getForEntity(url, EnderecoDTO.class);
 			
-			System.out.println(response.getStatusCode());
-			
 			return response.getBody();
 			
 		} catch (RestClientException ex) {

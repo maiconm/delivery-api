@@ -24,8 +24,8 @@ public class ProdutoService {
 		return produtoRepository.findAll();
 	}
 	
-	public List<Produto> listarPorRestaurante(Long id) {
-		return produtoRepository.selectByRestauranteId(id);
+	public List<Produto> listarPorRestaurante(String uuid) {
+		return produtoRepository.selectByRestauranteUuid(uuid);
 	}
 	
 	public Produto buscar(Long id) {
@@ -64,13 +64,11 @@ public class ProdutoService {
 		
 		Produto produtoAtual = this.buscarPorUUID(uuid);
 		
-		BeanUtils.copyProperties(produto, produtoAtual, "uuid", "id");
+		BeanUtils.copyProperties(produto, produtoAtual, "uuid", "id", "restaurante");
 		
 		return this.salvar(produtoAtual);
-			
+		
 	}
-	
-
 	
 	public Produto ajustar(String uuid, Map<String, Object> campos) {
 		

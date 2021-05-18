@@ -38,15 +38,29 @@ public class RestauranteService {
 		
 	}
 	
+	public Restaurante buscarPorUUID(String uuid) {
+		
+		Restaurante restaurante = restauranteRepository.selectByUuid(uuid);
+		
+		if (restaurante == null) {
+			
+			throw new NotFoundException("Produto não encontrado");
+			
+		}
+		
+		return restaurante;
+		
+	}
+	
 	public Restaurante salvar(Restaurante restaurante) {
 		return restauranteRepository.save(restaurante);
 	}
 	
-	public Restaurante atualizar(Long id, Restaurante restaurante) {
+	public Restaurante atualizar(String uuid, Restaurante restaurante) {
 		
-		Restaurante restauranteAtual = this.buscar(id);
+		Restaurante restauranteAtual = this.buscarPorUUID(uuid);
 			
-		BeanUtils.copyProperties(restaurante, restauranteAtual, "id", "produtos", "usuario");
+		BeanUtils.copyProperties(restaurante, restauranteAtual, "uuid", "id", "produtos", "usuario");
 		
 		return this.salvar(restauranteAtual);
 			
@@ -54,9 +68,9 @@ public class RestauranteService {
 	
 
 	
-	public Restaurante ajustar(Long id, Map<String, Object> campos) {
+	public Restaurante ajustar(String uuid, Map<String, Object> campos) {
 		
-		Restaurante restauranteAtual = this.buscar(id);
+		Restaurante restauranteAtual = this.buscarPorUUID(uuid);
 		
 		Utils.merge(restauranteAtual, campos);
 		
@@ -66,11 +80,11 @@ public class RestauranteService {
 		
 	}
 	
-	public boolean excluir(Long id) {
+	public boolean excluir(String uuid) {
 		
 		try {
 			
-			restauranteRepository.deleteById(id);
+			restauranteRepository.deleteByUuid(uuid);
 			
 		} catch (EmptyResultDataAccessException ex) {
 			throw new NotFoundException("Restaurante não encontrado");

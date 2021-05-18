@@ -17,8 +17,8 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 	@Query("select pro from Produto pro where pro.uuid = :uuid")
 	public Produto selectByUuid(@Param("uuid") String uuid);
 	
-	@Query("select pro from Produto pro where pro.restaurante.id = :id")
-	public List<Produto> selectByRestauranteId(@Param("id") Long id);
+	@Query("select pro from Produto pro where pro.restaurante.uuid = :uuid")
+	public List<Produto> selectByRestauranteUuid(@Param("uuid") String uuid);
 	
 	@Transactional
 	@Modifying

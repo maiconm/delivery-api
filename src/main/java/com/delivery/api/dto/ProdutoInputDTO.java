@@ -22,6 +22,6 @@ public class ProdutoInputDTO {
 	
 	private String descricao;
 	
-	private Long restaurante;
+	private String restaurante;
 	
 }

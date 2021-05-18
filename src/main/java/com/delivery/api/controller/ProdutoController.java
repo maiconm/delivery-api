@@ -34,7 +34,8 @@ import com.delivery.api.service.RestauranteService;
 @RequestMapping("/produtos")
 public class ProdutoController {
 	
-	@Autowired RestauranteService restauranteService;
+	@Autowired 
+	private RestauranteService restauranteService;
 	
 	@Autowired
 	private ProdutoService produtoService;
@@ -58,11 +59,11 @@ public class ProdutoController {
 		
 	}
 	
-	@GetMapping("/restaurante/{id}")
+	@GetMapping("/restaurante/{uuid}")
 	@ResponseStatus(code = HttpStatus.OK)
-	public List<ProdutoOutputResumidoDTO> listarTodosOsProdutosDoRestaurante(@PathVariable Long id) {
+	public List<ProdutoOutputResumidoDTO> listarTodosOsProdutosDoRestaurante(@PathVariable String uuid) {
 
-		List<Produto> produtos = produtoService.listarPorRestaurante(id);
+		List<Produto> produtos = produtoService.listarPorRestaurante(uuid);
 		
 		return produtoOutputResumidoMapper.mapearCollection(produtos);
 		
@@ -85,7 +86,7 @@ public class ProdutoController {
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public ProdutoOutputDTO adicionar(@RequestBody @Valid ProdutoInputDTO produtoInputDTO) {
 	
-		Restaurante restaurante = restauranteService.buscar(produtoInputDTO.getRestaurante());
+		Restaurante restaurante = restauranteService.buscarPorUUID(produtoInputDTO.getRestaurante());
 
 		Produto produto = produtoIntputMapper.mapearEntity(produtoInputDTO);
 

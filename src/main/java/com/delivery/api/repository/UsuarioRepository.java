@@ -6,7 +6,7 @@ import org.springframework.data.repository.query.Param;
 
 import com.delivery.api.entity.Usuario;
 
-public interface UsuarioRepository extends JpaRepository<Usuario , Long> {
+public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 	
 	public Usuario findByUuid(String uuid);
 	

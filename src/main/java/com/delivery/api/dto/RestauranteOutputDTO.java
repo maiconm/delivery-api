@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 public class RestauranteOutputDTO {
 
-	private Long id;
+	private String uuid;
 
 	private String nome;
 	
