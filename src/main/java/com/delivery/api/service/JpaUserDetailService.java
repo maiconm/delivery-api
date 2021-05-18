@@ -1,22 +1,18 @@
 package com.delivery.api.service;
 
-import java.util.Collection;
 import java.util.Collections;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.delivery.api.entity.AuthUser;
 import com.delivery.api.entity.Usuario;
 import com.delivery.api.exception.NotFoundException;
 import com.delivery.api.repository.UsuarioRepository;
-
-import lombok.Getter;
 
 @Service
 public class JpaUserDetailService implements UserDetailsService {
@@ -37,23 +33,5 @@ public class JpaUserDetailService implements UserDetailsService {
 		return new AuthUser(usuario, Collections.emptyList());
 		
 	}
-	
-	@Getter
-	public static class AuthUser extends User {
-		 
-		private static final long serialVersionUID = 1L;
-		
-		private String nome;
-		
-		private String uuid;
-		
-		public AuthUser(Usuario usuario, Collection<? extends GrantedAuthority> authorities) {
-			
-			super(usuario.getEmail(), usuario.getSenha(), authorities);
-			
-			this.nome = usuario.getNome();
-			this.uuid = usuario.getUuid();
-		}
-		
-	}
+
 }
