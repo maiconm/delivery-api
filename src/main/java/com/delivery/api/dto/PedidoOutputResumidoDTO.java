@@ -8,8 +8,6 @@ import lombok.Data;
 public class PedidoOutputResumidoDTO {
 	
 	private String uuid;
-	
-	private RestauranteOutputResumidoDTO restaurante;
 
 	private List<ProdutoOutputResumidoDTO> produtos;
 	 

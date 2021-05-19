@@ -57,21 +57,17 @@ public class Pedido {
 	
 	private void calcularPrecoTotal() {
 		
-		BigDecimal total = new BigDecimal(0);
+		BigDecimal somaPrecoTotal = BigDecimal.ZERO;
 		
-		produtos.forEach(produto -> {
+		for (Produto produto : produtos) {
 			
-			BigDecimal precoProduto = produto.getPreco();
+			somaPrecoTotal = somaPrecoTotal.add(produto.getPreco());
 			
-			total.add(precoProduto);
-			
-		});
+		}
 		
-		BigDecimal taxaFrete = restaurante.getTaxaFrete();
+		somaPrecoTotal = somaPrecoTotal.add(restaurante.getTaxaFrete());
 		
-		total.add(taxaFrete);
-		
-		setPrecoTotal(total);
+		setPrecoTotal(somaPrecoTotal);
 		
 	}
 

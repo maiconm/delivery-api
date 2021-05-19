@@ -10,5 +10,7 @@ public class ClienteOutputResumidoDTO {
 	private String nome;
 	 
 	private String contato;
+	
+	private String cep;
 
 }

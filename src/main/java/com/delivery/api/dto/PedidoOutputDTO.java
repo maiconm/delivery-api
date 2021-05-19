@@ -1,5 +1,6 @@
 package com.delivery.api.dto;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import lombok.Data;
@@ -15,6 +16,6 @@ public class PedidoOutputDTO {
 	 
 	private ClienteOutputResumidoDTO cliente;
 	
-	private String precoTotal;
+	private BigDecimal precoTotal;
 
 }
