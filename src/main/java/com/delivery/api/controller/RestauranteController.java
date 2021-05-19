@@ -57,6 +57,18 @@ public class RestauranteController {
 		
 	}
 	
+	@GetMapping("/usuario/{email}")
+	@ResponseStatus(code = HttpStatus.OK)
+	public List<RestauranteOutputDTO> consultarPorUsuario(@PathVariable String email) {
+		
+		List<Restaurante> restaurantes = restauranteService.listarPorUsuario(email);
+		
+		List<RestauranteOutputDTO> restaurantesOutput = restauranteOutputMapper.mapearCollection(restaurantes);
+		
+		return restaurantesOutput;
+		
+	}
+	
 	@GetMapping("/{uuid}")
 	@ResponseStatus(code = HttpStatus.OK)
 	public RestauranteOutputDTO consultaRestaurante(@PathVariable String uuid) {

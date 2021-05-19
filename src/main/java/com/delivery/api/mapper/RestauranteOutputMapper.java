@@ -1,5 +1,8 @@
 package com.delivery.api.mapper;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,4 +19,13 @@ public class RestauranteOutputMapper {
 	public RestauranteOutputDTO mapearEntity(Restaurante restaurante) {
 		return modelMapper.map(restaurante, RestauranteOutputDTO.class);
 	}
+	
+	public List<RestauranteOutputDTO> mapearCollection(List<Restaurante> restaurantes) {
+		
+		return restaurantes.stream()
+			.map(produto -> mapearEntity(produto))
+			.collect(Collectors.toList());
+		
+	}
+	
 }

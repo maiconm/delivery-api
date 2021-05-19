@@ -17,8 +17,8 @@ public interface RestauranteRepository extends JpaRepository<Restaurante, Long> 
 	@Query("select res from Restaurante res where res.uuid = :uuid")
 	public Restaurante selectByUuid(@Param("uuid") String uuid);
 	
-	@Query("select res from Restaurante res where res.usuario.uuid = :uuid")
-	public List<Restaurante> selectByUsuarioUuid(@Param("uuid") String uuid);
+	@Query("select res from Restaurante res where res.usuario.email = :email")
+	public List<Restaurante> selectByUsuarioEmail(@Param("email") String email);
 	
 	@Transactional
 	@Modifying

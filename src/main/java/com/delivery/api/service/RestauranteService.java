@@ -25,6 +25,10 @@ public class RestauranteService {
 		return restauranteRepository.findAll();
 	}
 	
+	public List<Restaurante> listarPorUsuario(String email) {
+		return restauranteRepository.selectByUsuarioEmail(email);
+	}
+	
 	public Restaurante buscar(Long id) {
 		
 		Optional<Restaurante> restaurante = restauranteRepository.findById(id);
