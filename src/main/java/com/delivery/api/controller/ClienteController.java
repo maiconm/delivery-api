@@ -51,19 +51,6 @@ public class ClienteController {
 		return clienteOutputResumidoMapper.mapearCollection(clientes);
 		
 	}
-
-	// TODO: consultar por restaurante
-//	@GetMapping("/restaurante/{uuid}")
-//	@ResponseStatus(code = HttpStatus.OK)
-//	public List<RestauranteOutputDTO> consultarPorRestaurante(@PathVariable String uuid) {
-//		
-//		List<Cliente> clientes = clienteService.listarPorUsuario(uuid);
-//		
-//		List<ClienteOutputDTO> clientesOutput = clienteOutputMapper.mapearCollection(clientes);
-//		
-//		return clientesOutput;
-//		
-//	}
 	
 	@GetMapping("/{uuid}")
 	@ResponseStatus(code = HttpStatus.OK)

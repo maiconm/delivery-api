@@ -25,11 +25,6 @@ public class ClienteService {
 		return clienteRepository.findAll();
 	}
 	
-	// TODO: listar por Restaurante
-//	public List<Restaurante> listarPorUsuario(String uuid) {
-//		return clienteRepository.selectByRestaurante(uuid);
-//	}
-	
 	public Cliente buscar(Long id) {
 		
 		Optional<Cliente> cliente = clienteRepository.findById(id);
