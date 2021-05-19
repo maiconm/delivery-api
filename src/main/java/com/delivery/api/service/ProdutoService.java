@@ -89,7 +89,9 @@ public class ProdutoService {
 			produtoRepository.deleteByUuid(uuid);
 			
 		} catch (EmptyResultDataAccessException ex) {
+			
 			throw new NotFoundException("Produto não encontrado");
+				
 		}
 		
 		return true;

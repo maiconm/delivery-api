@@ -29,6 +29,13 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 		
 	}
 	
+	@ExceptionHandler(ConflictException.class)
+	protected ResponseEntity<Object> tratarConflictException(ConflictException ex, WebRequest request) {
+		
+		return handleExceptionInternal(ex, null, new HttpHeaders(), HttpStatus.CONFLICT, request);
+		
+	}
+	
 	@Override
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
 			HttpHeaders headers, HttpStatus status, WebRequest request) {

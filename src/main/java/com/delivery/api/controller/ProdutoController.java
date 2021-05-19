@@ -130,7 +130,7 @@ public class ProdutoController {
 		produtoService.excluir(uuid);
 		
 		return ResponseEntity.noContent().build();
-		
+
 	}
 	
 }

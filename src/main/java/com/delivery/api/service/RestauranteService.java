@@ -10,6 +10,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import com.delivery.api.entity.Restaurante;
+import com.delivery.api.exception.ConflictException;
 import com.delivery.api.exception.NotFoundException;
 import com.delivery.api.repository.RestauranteRepository;
 import com.delivery.api.utils.Utils;
@@ -86,8 +87,18 @@ public class RestauranteService {
 			
 			restauranteRepository.deleteByUuid(uuid);
 			
-		} catch (EmptyResultDataAccessException ex) {
-			throw new NotFoundException("Restaurante não encontrado");
+		} catch (Exception ex) {
+			
+			if (ex.getClass().equals(EmptyResultDataAccessException.class)) {
+			
+				throw new NotFoundException("Restaurante não encontrado");
+			
+			} else {
+				
+				throw new ConflictException("Precisa deletar os produtos antes!");
+				
+			}
+			
 		}
 		
 		return true;
