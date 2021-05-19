@@ -3,7 +3,7 @@ package com.delivery.api.dto;
 import lombok.Data;
 
 @Data
-public class ClienteResumidoOutputDTO {
+public class ClienteOutputResumidoDTO {
 	
 	private String uuid;
 	
