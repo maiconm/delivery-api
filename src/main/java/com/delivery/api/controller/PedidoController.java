@@ -78,6 +78,18 @@ public class PedidoController {
 		
 	}
 	
+	@GetMapping("/cliente/{uuid}")
+	@ResponseStatus(code = HttpStatus.OK)
+	public List<PedidoOutputDTO> consultarPorCliente(@PathVariable String uuid) {
+		
+		List<Pedido> pedidos = pedidoService.listarPorCliente(uuid);
+		
+		List<PedidoOutputDTO> pedidossOutput = pedidoOutputMapper.mapearCollection(pedidos);
+		
+		return pedidossOutput;
+		
+	}
+	
 	@GetMapping("/{uuid}")
 	@ResponseStatus(code = HttpStatus.OK)
 	public PedidoOutputDTO consultarPedido(@PathVariable String uuid) {

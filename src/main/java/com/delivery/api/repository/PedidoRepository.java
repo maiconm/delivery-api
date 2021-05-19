@@ -18,7 +18,7 @@ public interface PedidoRepository extends JpaRepository<Pedido, Long> {
 	public Pedido selectByUuid(@Param("uuid") String uuid);
 	
 	@Query("select ped from Pedido ped where ped.cliente.uuid= :uuid")
-	public List<Pedido> selectByUsuario(@Param("uuid") String uuid);
+	public List<Pedido> selectByCliente(@Param("uuid") String uuid);
 	
 	@Query("select ped from Pedido ped where ped.restaurante.uuid= :uuid")
 	public List<Pedido> selectByRestaurante(@Param("uuid") String uuid);

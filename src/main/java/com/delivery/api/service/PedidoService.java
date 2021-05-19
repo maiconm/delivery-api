@@ -26,6 +26,10 @@ public class PedidoService {
 		return pedidoRepository.selectByRestaurante(uuid);
 	}
 	
+	public List<Pedido> listarPorCliente(String uuid) {
+		return pedidoRepository.selectByCliente(uuid);
+	}
+	
 	public Pedido buscar(Long id) {
 		
 		Optional<Pedido> pedido = pedidoRepository.findById(id);
