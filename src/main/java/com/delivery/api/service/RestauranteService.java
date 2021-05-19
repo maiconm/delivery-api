@@ -49,7 +49,7 @@ public class RestauranteService {
 		
 		if (restaurante == null) {
 			
-			throw new NotFoundException("Produto não encontrado");
+			throw new NotFoundException("Restaurante não encontrado");
 			
 		}
 		

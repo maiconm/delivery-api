@@ -25,14 +25,22 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 	@ExceptionHandler(NotFoundException.class)
 	protected ResponseEntity<Object> tratarNotFoundException(NotFoundException ex, WebRequest request) {
 		
-		return handleExceptionInternal(ex, null, new HttpHeaders(), HttpStatus.NOT_FOUND, request);
+		ErroGenerico erro = new ErroGenerico();
+		
+		erro.setErro(ex.getMessage());
+		
+		return handleExceptionInternal(ex, erro, new HttpHeaders(), HttpStatus.NOT_FOUND, request);
 		
 	}
 	
 	@ExceptionHandler(ConflictException.class)
 	protected ResponseEntity<Object> tratarConflictException(ConflictException ex, WebRequest request) {
 		
-		return handleExceptionInternal(ex, null, new HttpHeaders(), HttpStatus.CONFLICT, request);
+		ErroGenerico erro = new ErroGenerico();
+		
+		erro.setErro(ex.getMessage());
+		
+		return handleExceptionInternal(ex, erro, new HttpHeaders(), HttpStatus.CONFLICT, request);
 		
 	}
 	
