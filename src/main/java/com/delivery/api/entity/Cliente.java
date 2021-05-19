@@ -1,5 +1,6 @@
 package com.delivery.api.entity;
 
+import java.util.List;
 import java.util.UUID;
 
 import javax.persistence.Column;
@@ -7,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 
@@ -41,6 +44,10 @@ public class Cliente {
 	private String bairro;
 
 	private String complemento;
+	
+	@OneToMany
+	@JoinColumn(name = "id_cliente")
+	private List<Pedido> pedidos;
 	
 	@PrePersist
 	private void gerarUUID() {

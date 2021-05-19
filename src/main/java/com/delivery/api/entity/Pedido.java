@@ -21,46 +21,58 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "restaurante")
-public class Restaurante {
-
+@Table(name = "pedido")
+public class Pedido {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column(length = 36, nullable = false)
 	private String uuid;
-
-	private String nome;
-
-	@Column(name = "taxa_frete")
-	private BigDecimal taxaFrete;
-
-	private String cep;
-
-	private String rua;
-
-	private String numero;
-
-	private String bairro;
-
-	private String complemento;
-
-	@OneToMany
-	@JoinColumn(name = "id_restaurante")
-	private List<Produto> produtos;
-	
-	@OneToMany
-	@JoinColumn(name = "id_pedido")
-	private List<Pedido> pedidos;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_usuario")
-	private Usuario usuario;
+	@JoinColumn(name = "id_pedido")
+	private Restaurante restaurante;
+	
+	@OneToMany
+	@JoinColumn(name = "id_produto")
+	private List<Produto> produtos;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_cliente")
+	private Cliente cliente;
+	
+	@Column(name = "preco_total")
+	private BigDecimal precoTotal;
 	
 	@PrePersist
-	private void gerarUUID() {
+	private void gerarUUIDCalcularPrecoTotal() {
+		
 		setUuid(UUID.randomUUID().toString());
+		
+		calcularPrecoTotal();
+		
+	}
+	
+	private void calcularPrecoTotal() {
+		
+		BigDecimal total = new BigDecimal(0);
+		
+		produtos.forEach(produto -> {
+			
+			BigDecimal precoProduto = produto.getPreco();
+			
+			total.add(precoProduto);
+			
+		});
+		
+		BigDecimal taxaFrete = restaurante.getTaxaFrete();
+		
+		total.add(taxaFrete);
+		
+		setPrecoTotal(total);
+		
 	}
 
 }

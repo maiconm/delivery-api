@@ -43,6 +43,10 @@ public class Produto {
 	@JoinColumn(name = "id_restaurante")
 	private Restaurante restaurante;
 	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id_produto")
+	private Pedido pedido;
+	
 	@PrePersist
 	private void gerarUUID() {
 		setUuid(UUID.randomUUID().toString());
