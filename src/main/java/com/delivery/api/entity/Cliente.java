@@ -29,7 +29,7 @@ public class Cliente {
 	@Column(length = 100, nullable = false)
 	private String nome;
 	
-	@Column(name = "contato", nullable = false, unique = true)
+	@Column(name = "contato", nullable = false)
 	private String contato;
 	
 	private String cep;
