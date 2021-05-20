@@ -1,0 +1,2630 @@
+{
+	"variables": [],
+	"info": {
+		"name": "api-delivery-utfpr-postman",
+		"_postman_id": "7811e4e1-066f-4efe-d450-545e80bf2afc",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Autenticação",
+			"description": "",
+			"item": [
+				{
+					"name": "Auth",
+					"request": {
+						"url": "http://localhost:8081/oauth/token",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic ZGVsaXZlcnk6MTIz",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;charset=UTF-8"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "admin@email.com",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "password",
+									"value": "6760dce9c29a015064b6a439b57563ee167b59b9e9a4f58f83d8d579b385eac1",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text",
+									"description": ""
+								}
+							]
+						},
+						"description": "Auth"
+					},
+					"response": [
+						{
+							"id": "a0b9fa00-2aea-435f-9dfc-2b057c9c4625",
+							"name": "Response_200",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "no-store",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:45:34 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "{\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg\",\"token_type\":\"bearer\",\"refresh_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE2MjYzMzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImVhOWE5ZDM2LWE2NzEtNDYxNy05ZTlhLTE2OGFlODRkZTE1OSIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl0sImF0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiJ9.tFl2vkvUwOPxtFr34cfdX5cjvSe0yZ4XNxYstCKxglY\",\"expires_in\":599,\"scope\":\"write read\",\"jti\":\"c27a30de-a45e-42f9-a53e-9e0d02fa10b6\"}"
+						}
+					]
+				},
+				{
+					"name": "RefreshToken",
+					"request": {
+						"url": "http://localhost:8081/oauth/token",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic ZGVsaXZlcnk6MTIz",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;charset=UTF-8"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "refresh_token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE2MjYzMzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImVhOWE5ZDM2LWE2NzEtNDYxNy05ZTlhLTE2OGFlODRkZTE1OSIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl0sImF0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiJ9.tFl2vkvUwOPxtFr34cfdX5cjvSe0yZ4XNxYstCKxglY",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "grant_type",
+									"value": "refresh_token",
+									"type": "text",
+									"description": ""
+								}
+							]
+						},
+						"description": "RefreshToken"
+					},
+					"response": [
+						{
+							"id": "5bdab55e-4d4e-4551-a444-3e3314d8525e",
+							"name": "Response_200",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "no-store",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:45:21 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "{\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MjEsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6IjhmYmZhOWJjLTBkNzctNDA3Yy1iNjI2LTFjZjdlMWJiZDdlYSIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.zUTwnB5uz6W8E4eZRECVNtt3o8BXBOnDb1AqHG8bH3Q\",\"token_type\":\"bearer\",\"refresh_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE2MjYzMjEsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6IjZlNmFmNmY1LTI4OGItNDZmZi04NmRkLTk5MjRhZDI4YmU0ZCIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl0sImF0aSI6IjhmYmZhOWJjLTBkNzctNDA3Yy1iNjI2LTFjZjdlMWJiZDdlYSJ9.Jtpd9fk-sY-z9Btu6Q_bBeamVdVPBDcNCnWkJBv8O8c\",\"expires_in\":599,\"scope\":\"write read\",\"jti\":\"8fbfa9bc-0d77-407c-b626-1cf7e1bbd7ea\"}"
+						}
+					]
+				},
+				{
+					"name": "CheckToken",
+					"request": {
+						"url": "http://localhost:8081/oauth/check_token",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic ZGVsaXZlcnk6MTIz",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MjEsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6IjhmYmZhOWJjLTBkNzctNDA3Yy1iNjI2LTFjZjdlMWJiZDdlYSIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.zUTwnB5uz6W8E4eZRECVNtt3o8BXBOnDb1AqHG8bH3Q",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "grant_type",
+									"value": "check_token",
+									"type": "text",
+									"description": ""
+								}
+							]
+						},
+						"description": "CheckToken"
+					},
+					"response": [
+						{
+							"id": "1805e15c-271b-4d32-883d-09e5a9880d97",
+							"name": "Response_200",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:45:23 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "{\"active\":true,\"exp\":1621540521,\"user_name\":\"admin@email.com\",\"jti\":\"8fbfa9bc-0d77-407c-b626-1cf7e1bbd7ea\",\"client_id\":\"delivery\",\"scope\":[\"write\",\"read\"]}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cliente",
+			"description": "",
+			"item": [
+				{
+					"name": "Listar Clientes",
+					"request": {
+						"url": "http://localhost:8081/clientes",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Listar Clientes"
+					},
+					"response": [
+						{
+							"id": "7e669e4c-5260-46a8-9e69-f22bdc063c40",
+							"name": "Response_200",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:46:41 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "[{\"uuid\":\"0e6084d8-4e31-4f12-a0b9-02ce3d8eaafc\",\"nome\":\"Neymar Junior\",\"contato\":\"24 99000-1234\",\"cep\":\"22795-120\"}]"
+						}
+					]
+				},
+				{
+					"name": "Consultar Cliente",
+					"request": {
+						"url": "http://localhost:8081/clientes/86173e3d-1685-4b22-8a8f-2ccb6d4c02df",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Consultar Cliente"
+					},
+					"response": [
+						{
+							"id": "812d5b30-7f8c-4c13-8c51-47af4bfa5b74",
+							"name": "Response_404",
+							"code": 404,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:46:44 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n  \"erro\": \"Cliente não encontrado!\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Adicionar Cliente",
+					"request": {
+						"url": "http://localhost:8081/clientes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Juca\",\r\n  \"contato\": \"41 99876-5432\",\r\n  \"cep\": \"29144-237\",\r\n  \"rua\": \"Rua Diamantina\",\r\n  \"numero\": \"456\",\r\n  \"bairro\": \"Campina Grande\",\r\n  \"complemento\": \"Casa\"\r\n}"
+						},
+						"description": "Adicionar Cliente"
+					},
+					"response": [
+						{
+							"id": "b405bbdf-febc-4562-a420-1199b1c497f3",
+							"name": "Response_201",
+							"code": 201,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:46:51 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "{\"uuid\":\"34e3882b-c770-479f-8d5f-24133af6629f\",\"nome\":\"Juca\",\"cep\":\"29144-237\",\"contato\":\"41 99876-5432\",\"rua\":\"Rua Diamantina\",\"numero\":\"456\",\"bairro\":\"Campina Grande\",\"complemento\":\"Casa\"}"
+						}
+					]
+				},
+				{
+					"name": "Editar Cliente",
+					"request": {
+						"url": "http://localhost:8081/clientes/0e6084d8-4e31-4f12-a0b9-02ce3d8eaafc",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Bruce\",\r\n  \"contato\": \"41 98765-4321\",\r\n  \"cep\": \"58037-660\",\r\n  \"rua\": \"Rua Oceano Ártico\",\r\n  \"numero\": \"396\",\r\n  \"bairro\": \"Jardim Oceania\",\r\n  \"complemento\": \"Casa\"\r\n}"
+						},
+						"description": "Editar Cliente"
+					},
+					"response": [
+						{
+							"id": "3efa408c-e67b-45ae-83af-46dee44ee986",
+							"name": "Response_200",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:46:56 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "{\"uuid\":\"0e6084d8-4e31-4f12-a0b9-02ce3d8eaafc\",\"nome\":\"Bruce\",\"cep\":\"58037-660\",\"contato\":\"41 98765-4321\",\"rua\":\"Rua Oceano Ártico\",\"numero\":\"396\",\"bairro\":\"Jardim Oceania\",\"complemento\":\"Casa\"}"
+						}
+					]
+				},
+				{
+					"name": "Editar Cliente (não nulos)",
+					"request": {
+						"url": "http://localhost:8081/clientes/0e6084d8-4e31-4f12-a0b9-02ce3d8eaafc",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Wayne\",\r\n  \"contato\": \"21 95867-1234\"\r\n}"
+						},
+						"description": "Editar Cliente (não nulos)"
+					},
+					"response": [
+						{
+							"id": "cba811b9-f38d-453d-a70a-e0a887ed5025",
+							"name": "Response_200",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:46:59 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "{\"uuid\":\"0e6084d8-4e31-4f12-a0b9-02ce3d8eaafc\",\"nome\":\"Wayne\",\"cep\":\"58037-660\",\"contato\":\"21 95867-1234\",\"rua\":\"Rua Oceano Ártico\",\"numero\":\"396\",\"bairro\":\"Jardim Oceania\",\"complemento\":\"Casa\"}"
+						}
+					]
+				},
+				{
+					"name": "Deletar Cliente",
+					"request": {
+						"url": "http://localhost:8081/clientes/0e6084d8-4e31-4f12-a0b9-02ce3d8eaafc",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Deletar Cliente"
+					},
+					"response": [
+						{
+							"id": "221096af-e302-495d-99a8-9fbf960588f1",
+							"name": "Response_204",
+							"code": 204,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 11:26:05 GMT",
+									"disabled": false
+								}
+							],
+							"cookie": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Hello",
+			"description": "",
+			"item": [
+				{
+					"name": "Hello",
+					"request": {
+						"url": "http://localhost:8081/hello",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "text/plain;charset=UTF-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Hello"
+					},
+					"response": [
+						{
+							"id": "0378cfb2-ef2f-4acb-a7bc-426cf65cbac5",
+							"name": "Response_200",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Content-Length",
+									"value": "13",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:45:36 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "Hello world!!"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Utils",
+			"description": "",
+			"item": [
+				{
+					"name": "Consultar CEP",
+					"request": {
+						"url": "http://localhost:8081/utils/cep/01001000",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Consultar CEP"
+					},
+					"response": [
+						{
+							"id": "b815ef8f-a7e5-4b83-b7b5-77b7d46e2134",
+							"name": "Response_200",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:45:41 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "{\"cep\":\"01001-000\",\"logradouro\":\"Praça da Sé\",\"bairro\":\"Sé\",\"uf\":\"SP\",\"localidade\":\"São Paulo\"}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Restaurante",
+			"description": "",
+			"item": [
+				{
+					"name": "Listar Restaurantes",
+					"request": {
+						"url": "http://localhost:8081/restaurantes",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Listar Restaurantes"
+					},
+					"response": [
+						{
+							"id": "36811f43-864a-4aa2-a8f7-9437d71ccb30",
+							"name": "Response_200",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:46:05 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "[{\"uuid\":\"8737c009-33ae-4cb5-95ee-7c41194a5bf9\",\"nome\":\"Madero\",\"cep\":\"68746-670\"},{\"uuid\":\"a81c43cd-2aa3-4657-b24a-52705bf0df2c\",\"nome\":\"Pentucci\",\"cep\":\"59611-200\"},{\"uuid\":\"ab270852-b297-497b-807c-fa7fad298568\",\"nome\":\"MacDonalds\",\"cep\":\"76964-132\"},{\"uuid\":\"8934acda-b24e-442b-b08a-7d251331fd73\",\"nome\":\"Top Pizza\",\"cep\":\"01311-000\"}]"
+						}
+					]
+				},
+				{
+					"name": "Listar Restaurante de um Usuário",
+					"request": {
+						"url": "http://localhost:8081/restaurantes/usuario/admin@email.com",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Listar Restaurantes de um Usuário"
+					},
+					"response": [
+						{
+							"id": "28a34ab4-7aa5-48e2-af71-c8b345c578c1",
+							"name": "Response_200",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "Content-Disposition",
+									"value": "inline;filename=f.txt",
+									"disabled": false
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:45:57 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "[{\"uuid\":\"8737c009-33ae-4cb5-95ee-7c41194a5bf9\",\"nome\":\"Madero\",\"taxaFrete\":10.00,\"cep\":\"68746-670\",\"rua\":\"Rua José H. Pereira\",\"numero\":\"123\",\"bairro\":\"Jaderlândia\",\"complemento\":\"Esquina\",\"produtos\":[{\"uuid\":\"c26e7da3-ec11-4ebf-917c-cf76798bce5a\",\"nome\":\"Coxinha\"}]},{\"uuid\":\"a81c43cd-2aa3-4657-b24a-52705bf0df2c\",\"nome\":\"Pentucci\",\"taxaFrete\":15.00,\"cep\":\"59611-200\",\"rua\":\"Rua Doutor João Marcelino\",\"numero\":\"456\",\"bairro\":\"Santo Antônio\",\"complemento\":\"Ao lado do shopping\",\"produtos\":[]},{\"uuid\":\"ab270852-b297-497b-807c-fa7fad298568\",\"nome\":\"MacDonalds\",\"taxaFrete\":13.00,\"cep\":\"76964-132\",\"rua\":\"Avenida Sete de Setembro\",\"numero\":\"789\",\"bairro\":\"Princesa Isabel\",\"complemento\":\"Centro\",\"produtos\":[]}]"
+						}
+					]
+				},
+				{
+					"name": "Consultar Restaurante",
+					"request": {
+						"url": "http://localhost:8081/restaurantes/8737c009-33ae-4cb5-95ee-7c41194a5bf9",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Consultar Restaurante"
+					},
+					"response": [
+						{
+							"id": "78bc77bf-9797-4290-a0b4-bbdadd3c882e",
+							"name": "Response_200",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:45:53 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "{\"uuid\":\"8737c009-33ae-4cb5-95ee-7c41194a5bf9\",\"nome\":\"Madero\",\"taxaFrete\":10.00,\"cep\":\"68746-670\",\"rua\":\"Rua José H. Pereira\",\"numero\":\"123\",\"bairro\":\"Jaderlândia\",\"complemento\":\"Esquina\",\"produtos\":[{\"uuid\":\"c26e7da3-ec11-4ebf-917c-cf76798bce5a\",\"nome\":\"Coxinha\"}]}"
+						}
+					]
+				},
+				{
+					"name": "Adicionar Restaurante",
+					"request": {
+						"url": "http://localhost:8081/restaurantes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Top Pizza\",\r\n  \"taxaFrete\": 5,\r\n  \"cep\": \"01311-000\",\r\n  \"usuario\": \"admin@email.com\",\r\n  \"rua\": \"Av. Paulista\",\r\n  \"numero\": \"456\",\r\n  \"bairro\": \"São Paulo\",\r\n  \"complemento\": \"Estabelecimento azul\"\r\n}"
+						},
+						"description": "Adicionar Restaurante"
+					},
+					"response": [
+						{
+							"id": "be9ac138-4dd8-4a78-9397-97f3d94fb2df",
+							"name": "Response_201",
+							"code": 201,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:46:02 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "{\"uuid\":\"8934acda-b24e-442b-b08a-7d251331fd73\",\"nome\":\"Top Pizza\",\"taxaFrete\":5,\"cep\":\"01311-000\",\"rua\":\"Av. Paulista\",\"numero\":\"456\",\"bairro\":\"São Paulo\",\"complemento\":\"Estabelecimento azul\",\"produtos\":null}"
+						}
+					]
+				},
+				{
+					"name": "Editar Restaurante",
+					"request": {
+						"url": "http://localhost:8081/restaurantes/8737c009-33ae-4cb5-95ee-7c41194a5bf9",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Espelunca\",\r\n  \"taxaFrete\": 90,\r\n  \"cep\": \"69033-650\",\r\n  \"rua\": \"Beco Santa Helena\",\r\n  \"numero\": \"396\",\r\n  \"bairro\": \"São Jorge\",\r\n  \"complemento\": \"Rua sem saida\"\r\n}"
+						},
+						"description": "Editar Restaurante"
+					},
+					"response": [
+						{
+							"id": "a1360bd7-dbf9-4953-9728-7e3662321b63",
+							"name": "Response_200",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:46:11 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "{\"uuid\":\"8737c009-33ae-4cb5-95ee-7c41194a5bf9\",\"nome\":\"Espelunca\",\"taxaFrete\":90,\"cep\":\"69033-650\",\"rua\":\"Beco Santa Helena\",\"numero\":\"396\",\"bairro\":\"São Jorge\",\"complemento\":\"Rua sem saida\",\"produtos\":[{\"uuid\":\"c26e7da3-ec11-4ebf-917c-cf76798bce5a\",\"nome\":\"Coxinha\"}]}"
+						}
+					]
+				},
+				{
+					"name": "Editar Restaurante (não nulos)",
+					"request": {
+						"url": "http://localhost:8081/restaurantes/8737c009-33ae-4cb5-95ee-7c41194a5bf9",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"10 Pasteis\",\r\n  \"taxaFrete\": 10\r\n}"
+						},
+						"description": "Editar Restaurante (não nulos)"
+					},
+					"response": [
+						{
+							"id": "9a595158-ef2b-47ad-80fd-35db994c77e2",
+							"name": "Response_200",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:46:14 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "{\"uuid\":\"8737c009-33ae-4cb5-95ee-7c41194a5bf9\",\"nome\":\"10 Pasteis\",\"taxaFrete\":10,\"cep\":\"69033-650\",\"rua\":\"Beco Santa Helena\",\"numero\":\"396\",\"bairro\":\"São Jorge\",\"complemento\":\"Rua sem saida\",\"produtos\":[{\"uuid\":\"c26e7da3-ec11-4ebf-917c-cf76798bce5a\",\"nome\":\"Coxinha\"}]}"
+						}
+					]
+				},
+				{
+					"name": "Deletar Restaurante",
+					"request": {
+						"url": "http://localhost:8081/restaurantes/8737c009-33ae-4cb5-95ee-7c41194a5bf9",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Deletar Restaurante"
+					},
+					"response": [
+						{
+							"id": "e5da2ccd-be8f-4664-a764-e97feeeae55d",
+							"name": "Response_204",
+							"code": 204,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 11:26:44 GMT",
+									"disabled": false
+								}
+							],
+							"cookie": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Produto",
+			"description": "",
+			"item": [
+				{
+					"name": "Listar Produtos",
+					"request": {
+						"url": "http://localhost:8081/produtos",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authentication",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Listar Produtos"
+					},
+					"response": [
+						{
+							"id": "680ebd3e-7c3a-4442-8c17-b87cc90bc1b2",
+							"name": "Response_200",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:46:21 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "[{\"uuid\":\"c26e7da3-ec11-4ebf-917c-cf76798bce5a\",\"nome\":\"Coxinha\"}]"
+						}
+					]
+				},
+				{
+					"name": "Listar Produtos de um Restaurante",
+					"request": {
+						"url": "http://localhost:8081/produtos/restaurante/8737c009-33ae-4cb5-95ee-7c41194a5bf9",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Listar Produtos de um Restaurante"
+					},
+					"response": [
+						{
+							"id": "af45b3f9-9c8c-4adf-82b3-10b91396eb48",
+							"name": "Response_200",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:46:26 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "[{\"uuid\":\"c26e7da3-ec11-4ebf-917c-cf76798bce5a\",\"nome\":\"Coxinha\"}]"
+						}
+					]
+				},
+				{
+					"name": "Consultar Produto",
+					"request": {
+						"url": "http://localhost:8081/produtos/c26e7da3-ec11-4ebf-917c-cf76798bce5a",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Consultar Produto"
+					},
+					"response": [
+						{
+							"id": "abe398a3-2d59-43c1-a920-5e52c5d399de",
+							"name": "Response_200",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:46:24 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "{\"uuid\":\"c26e7da3-ec11-4ebf-917c-cf76798bce5a\",\"nome\":\"Coxinha\",\"preco\":7.77,\"descricao\":\"Frango com catupiri\",\"restaurante\":{\"uuid\":\"8737c009-33ae-4cb5-95ee-7c41194a5bf9\",\"nome\":\"10 Pasteis\",\"cep\":\"69033-650\"}}"
+						}
+					]
+				},
+				{
+					"name": "Adicionar Produto",
+					"request": {
+						"url": "http://localhost:8081/produtos",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Pastel\",\r\n  \"preco\": 4.75,\r\n  \"descricao\": \"Carne\",\r\n  \"restaurante\": \"8737c009-33ae-4cb5-95ee-7c41194a5bf9\"\r\n}"
+						},
+						"description": "Adicionar Produto"
+					},
+					"response": [
+						{
+							"id": "80ba2b3f-2874-42a0-a83f-d7151c7ec002",
+							"name": "Response_201",
+							"code": 201,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:46:29 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "{\"uuid\":\"fe4bb80b-d39b-4781-8c4c-b6475c92b406\",\"nome\":\"Pastel\",\"preco\":4.75,\"descricao\":\"Carne\",\"restaurante\":{\"uuid\":\"8737c009-33ae-4cb5-95ee-7c41194a5bf9\",\"nome\":\"10 Pasteis\",\"cep\":\"69033-650\"}}"
+						}
+					]
+				},
+				{
+					"name": "Editar Produto",
+					"request": {
+						"url": "http://localhost:8081/produtos/c26e7da3-ec11-4ebf-917c-cf76798bce5a",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Coxinha Grande\",\r\n  \"descricao\": \"Frango\",\r\n  \"preco\": 5.5\r\n}"
+						},
+						"description": "Editar Produto"
+					},
+					"response": [
+						{
+							"id": "7eda75d5-7ce3-482d-bcbf-5161c23561c2",
+							"name": "Response_200",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:46:32 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "{\"uuid\":\"c26e7da3-ec11-4ebf-917c-cf76798bce5a\",\"nome\":\"Coxinha Grande\",\"preco\":5.5,\"descricao\":\"Frango\",\"restaurante\":{\"uuid\":\"8737c009-33ae-4cb5-95ee-7c41194a5bf9\",\"nome\":\"10 Pasteis\",\"cep\":\"69033-650\"}}"
+						}
+					]
+				},
+				{
+					"name": "Editar Produto (não nulos)",
+					"request": {
+						"url": "http://localhost:8081/produtos/c26e7da3-ec11-4ebf-917c-cf76798bce5a",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Coxinha\"\r\n}"
+						},
+						"description": "Editar Produto (não nulos)"
+					},
+					"response": [
+						{
+							"id": "0b4e7d29-41c5-4d71-9975-5dce77cc93ad",
+							"name": "Response_200",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:46:35 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "{\"uuid\":\"c26e7da3-ec11-4ebf-917c-cf76798bce5a\",\"nome\":\"Coxinha\",\"preco\":5.50,\"descricao\":\"Frango\",\"restaurante\":{\"uuid\":\"8737c009-33ae-4cb5-95ee-7c41194a5bf9\",\"nome\":\"10 Pasteis\",\"cep\":\"69033-650\"}}"
+						}
+					]
+				},
+				{
+					"name": "Deletar Produto",
+					"request": {
+						"url": "http://localhost:8081/produtos/c26e7da3-ec11-4ebf-917c-cf76798bce5a",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Deletar Produto"
+					},
+					"response": [
+						{
+							"id": "2c92dbf4-5c0a-4c08-aac7-9c7a073dd06a",
+							"name": "Response_204",
+							"code": 204,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:47:35 GMT",
+									"disabled": false
+								}
+							],
+							"cookie": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Pedido",
+			"description": "",
+			"item": [
+				{
+					"name": "Listar Pedidos",
+					"request": {
+						"url": "http://localhost:8081/pedidos",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authentication",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Listar Pedidos"
+					},
+					"response": [
+						{
+							"id": "5c5256e5-92dc-4092-bd2d-7ff017d19733",
+							"name": "Response_200",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:47:11 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "[{\"uuid\":\"eefcbf04-41df-4f60-b502-b6f0c1167a3a\",\"produtos\":[{\"uuid\":\"c26e7da3-ec11-4ebf-917c-cf76798bce5a\",\"nome\":\"Coxinha\"}],\"cliente\":{\"uuid\":\"0e6084d8-4e31-4f12-a0b9-02ce3d8eaafc\",\"nome\":\"Wayne\",\"contato\":\"21 95867-1234\",\"cep\":\"58037-660\"},\"precoTotal\":\"26.50\"}]"
+						}
+					]
+				},
+				{
+					"name": "Listar Pedidos de um Cliente",
+					"request": {
+						"url": "http://localhost:8081/pedidos/cliente/0e6084d8-4e31-4f12-a0b9-02ce3d8eaafc",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Listar Pedidos de um Cliente"
+					},
+					"response": [
+						{
+							"id": "eae192c0-3818-4ad2-9550-ad48acd85879",
+							"name": "Response_200",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:47:22 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "[{\"uuid\":\"eefcbf04-41df-4f60-b502-b6f0c1167a3a\",\"restaurante\":{\"uuid\":\"8737c009-33ae-4cb5-95ee-7c41194a5bf9\",\"nome\":\"10 Pasteis\",\"cep\":\"69033-650\"},\"produtos\":[{\"uuid\":\"c26e7da3-ec11-4ebf-917c-cf76798bce5a\",\"nome\":\"Coxinha\"}],\"cliente\":{\"uuid\":\"0e6084d8-4e31-4f12-a0b9-02ce3d8eaafc\",\"nome\":\"Wayne\",\"contato\":\"21 95867-1234\",\"cep\":\"58037-660\"},\"precoTotal\":26.50}]"
+						}
+					]
+				},
+				{
+					"name": "Listar Pedidos de um Restaurante",
+					"request": {
+						"url": "http://localhost:8081/pedidos/restaurante/8737c009-33ae-4cb5-95ee-7c41194a5bf9",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Listar Pedidos de um Restaurante"
+					},
+					"response": [
+						{
+							"id": "b11f74e6-e905-4d3b-89e6-5573975d601b",
+							"name": "Response_200",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:47:16 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "[{\"uuid\":\"eefcbf04-41df-4f60-b502-b6f0c1167a3a\",\"restaurante\":{\"uuid\":\"8737c009-33ae-4cb5-95ee-7c41194a5bf9\",\"nome\":\"10 Pasteis\",\"cep\":\"69033-650\"},\"produtos\":[{\"uuid\":\"c26e7da3-ec11-4ebf-917c-cf76798bce5a\",\"nome\":\"Coxinha\"}],\"cliente\":{\"uuid\":\"0e6084d8-4e31-4f12-a0b9-02ce3d8eaafc\",\"nome\":\"Wayne\",\"contato\":\"21 95867-1234\",\"cep\":\"58037-660\"},\"precoTotal\":26.50}]"
+						}
+					]
+				},
+				{
+					"name": "Consultar Pedido",
+					"request": {
+						"url": "http://localhost:8081/pedidos/ba9c9295-23ea-4c63-834c-a0ebbe5db6f1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Consultar Pedido"
+					},
+					"response": [
+						{
+							"id": "14674932-027d-43be-8ea6-3bd054cb2ae3",
+							"name": "Response_404",
+							"code": 404,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:47:25 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n  \"erro\": \"Pedido não encontrado!\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Adicionar Pedido",
+					"request": {
+						"url": "http://localhost:8081/pedidos",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"restaurante\": \"8737c009-33ae-4cb5-95ee-7c41194a5bf9\",\r\n  \"produtos\": [\r\n    \"c26e7da3-ec11-4ebf-917c-cf76798bce5a\",\r\n    \"c26e7da3-ec11-4ebf-917c-cf76798bce5a\",\r\n    \"c26e7da3-ec11-4ebf-917c-cf76798bce5a\"\r\n  ],\r\n  \"cliente\": \"0e6084d8-4e31-4f12-a0b9-02ce3d8eaafc\"\r\n}"
+						},
+						"description": "Adicionar Pedido"
+					},
+					"response": [
+						{
+							"id": "0c713667-fdb5-432a-b6c8-a10052044215",
+							"name": "Response_201",
+							"code": 201,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 19:47:07 GMT",
+									"disabled": false
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"disabled": false
+								}
+							],
+							"cookie": [],
+							"body": "{\"uuid\":\"eefcbf04-41df-4f60-b502-b6f0c1167a3a\",\"restaurante\":{\"uuid\":\"8737c009-33ae-4cb5-95ee-7c41194a5bf9\",\"nome\":\"10 Pasteis\",\"cep\":\"69033-650\"},\"produtos\":[{\"uuid\":\"c26e7da3-ec11-4ebf-917c-cf76798bce5a\",\"nome\":\"Coxinha\"},{\"uuid\":\"c26e7da3-ec11-4ebf-917c-cf76798bce5a\",\"nome\":\"Coxinha\"},{\"uuid\":\"c26e7da3-ec11-4ebf-917c-cf76798bce5a\",\"nome\":\"Coxinha\"}],\"cliente\":{\"uuid\":\"0e6084d8-4e31-4f12-a0b9-02ce3d8eaafc\",\"nome\":\"Wayne\",\"contato\":\"21 95867-1234\",\"cep\":\"58037-660\"},\"precoTotal\":26.50}"
+						}
+					]
+				},
+				{
+					"name": "Deletar Pedido",
+					"request": {
+						"url": "http://localhost:8081/pedidos/923111be-6caa-4e74-98f8-4b21d4849e14",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjE1NDA1MzQsInVzZXJfbmFtZSI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6ImMyN2EzMGRlLWE0NWUtNDJmOS1hNTNlLTllMGQwMmZhMTBiNiIsImNsaWVudF9pZCI6ImRlbGl2ZXJ5Iiwic2NvcGUiOlsid3JpdGUiLCJyZWFkIl19.0HrR8F04x1KViHrxDH1BjvW_633GpGKR3o7KeC-U0jg",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Deletar Pedido"
+					},
+					"response": [
+						{
+							"id": "17cc631a-9c9b-4bd2-a65b-95f25ad53ed4",
+							"name": "Response_204",
+							"code": 204,
+							"_postman_previewlanguage": "Text",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"disabled": false
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"disabled": false
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"disabled": false
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"disabled": false
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"disabled": false
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"disabled": false
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 May 2021 11:27:06 GMT",
+									"disabled": false
+								}
+							],
+							"cookie": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -15,7 +15,7 @@ public class CEPService {
 		
 		RestTemplate restTemplate = new RestTemplate();
 		
-		String url = "https://viacep.com.br/ws/"+cep+"/json/";
+		String url = "https://viacep.com.br/ws/" + cep + "/json/";
 		
 		try {
 			
