@@ -17,7 +17,9 @@ public class RestauranteOutputMapper {
 	private ModelMapper modelMapper;
 
 	public RestauranteOutputDTO mapearEntity(Restaurante restaurante) {
+		
 		return modelMapper.map(restaurante, RestauranteOutputDTO.class);
+		
 	}
 	
 	public List<RestauranteOutputDTO> mapearCollection(List<Restaurante> restaurantes) {

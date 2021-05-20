@@ -18,7 +18,9 @@ public class UsuarioService {
 		Usuario usuario = usuarioRepository.selectByEmail(email);
 		
 		if (usuario == null) {
+			
 			throw new NotFoundException("Usuário não encontrado!");
+			
 		}
 		
 		return usuario;

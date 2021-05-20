@@ -27,7 +27,9 @@ public class JpaUserDetailService implements UserDetailsService {
 		Usuario usuario = usuarioRepository.selectByEmail(username);
 		
 		if (usuario == null) {
+			
 			throw new NotFoundException("Usuário não encontrado!");
+			
 		}
 		
 		return new AuthUser(usuario, Collections.emptyList());

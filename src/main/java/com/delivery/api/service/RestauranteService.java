@@ -22,11 +22,15 @@ public class RestauranteService {
 	private RestauranteRepository restauranteRepository;
 	
 	public List<Restaurante> listar() {
+		
 		return restauranteRepository.findAll();
+		
 	}
 	
 	public List<Restaurante> listarPorUsuario(String email) {
+		
 		return restauranteRepository.selectByUsuarioEmail(email);
+		
 	}
 	
 	public Restaurante buscar(Long id) {
@@ -35,7 +39,7 @@ public class RestauranteService {
 		
 		if (!restaurante.isPresent()) {
 			
-			throw new NotFoundException("Restaurante não encontrado");
+			throw new NotFoundException("Restaurante não encontrado!");
 			
 		}
 		
@@ -49,7 +53,7 @@ public class RestauranteService {
 		
 		if (restaurante == null) {
 			
-			throw new NotFoundException("Restaurante não encontrado");
+			throw new NotFoundException("Restaurante não encontrado!");
 			
 		}
 		
@@ -58,7 +62,9 @@ public class RestauranteService {
 	}
 	
 	public Restaurante salvar(Restaurante restaurante) {
+		
 		return restauranteRepository.save(restaurante);
+		
 	}
 	
 	public Restaurante atualizar(String uuid, Restaurante restaurante) {
@@ -95,7 +101,7 @@ public class RestauranteService {
 			
 			if (ex.getClass().equals(EmptyResultDataAccessException.class)) {
 			
-				throw new NotFoundException("Restaurante não encontrado");
+				throw new NotFoundException("Restaurante não encontrado!");
 			
 			} else {
 				

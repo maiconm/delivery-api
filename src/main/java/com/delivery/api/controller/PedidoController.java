@@ -62,7 +62,9 @@ public class PedidoController {
 
 		List<Pedido> pedidos = pedidoService.listar();
 		
-		return pedidoOutputResumidoMapper.mapearCollection(pedidos);
+		List<PedidoOutputResumidoDTO> pedidosOutput = pedidoOutputResumidoMapper.mapearCollection(pedidos);
+		
+		return pedidosOutput;
 		
 	}
 	
@@ -72,9 +74,9 @@ public class PedidoController {
 		
 		List<Pedido> pedidos = pedidoService.listarPorRestaurante(uuid);
 		
-		List<PedidoOutputDTO> pedidossOutput = pedidoOutputMapper.mapearCollection(pedidos);
+		List<PedidoOutputDTO> pedidosOutput = pedidoOutputMapper.mapearCollection(pedidos);
 		
-		return pedidossOutput;
+		return pedidosOutput;
 		
 	}
 	
@@ -84,9 +86,9 @@ public class PedidoController {
 		
 		List<Pedido> pedidos = pedidoService.listarPorCliente(uuid);
 		
-		List<PedidoOutputDTO> pedidossOutput = pedidoOutputMapper.mapearCollection(pedidos);
+		List<PedidoOutputDTO> pedidosOutput = pedidoOutputMapper.mapearCollection(pedidos);
 		
-		return pedidossOutput;
+		return pedidosOutput;
 		
 	}
 	
@@ -110,7 +112,7 @@ public class PedidoController {
 		
 		List<Produto> produtos = pedidoInput.getProdutos()
 				.stream()
-				.map(protudoUuid -> produtoService.buscarPorUUID(protudoUuid))
+				.map(protudoUUID -> produtoService.buscarPorUUID(protudoUUID))
 				.collect(Collectors.toList());
 		
 		Restaurante restaurante = restauranteService.buscarPorUUID(pedidoInput.getRestaurante());

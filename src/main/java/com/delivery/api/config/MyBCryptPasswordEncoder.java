@@ -10,6 +10,8 @@ public class MyBCryptPasswordEncoder {
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {
+		
 		return new BCryptPasswordEncoder();
+		
 	}
 }

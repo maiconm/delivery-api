@@ -21,7 +21,9 @@ public class AuthUser extends User {
 		super(usuario.getEmail(), usuario.getSenha(), authorities);
 		
 		this.nome = usuario.getNome();
+		
 		this.uuid = usuario.getUuid();
+		
 	}
 	
 }

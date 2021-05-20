@@ -13,11 +13,11 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 	public Cliente findByUuid(String uuid);
 	
 	@Query("select cli from Cliente cli where cli.uuid = :uuid")
-	public Cliente selectByUuid(@Param("uuid") String uuid);
+	public Cliente selectByUUID(@Param("uuid") String uuid);
 	
 	@Transactional
 	@Modifying
 	@Query("delete from Cliente cli where cli.uuid = :uuid")
-	public void deleteByUuid(@Param("uuid") String uuid);
+	public void deleteByUUID(@Param("uuid") String uuid);
 	
 }

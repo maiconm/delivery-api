@@ -63,7 +63,9 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 				String mensagem = messageSource.getMessage(campo, LocaleContextHolder.getLocale());
 				
 				ApiValidationExceptionResponse.Erro erro = new ApiValidationExceptionResponse.Erro();
+				
 				erro.setCampo(campo.getField());
+				
 				erro.setErro(mensagem);
 				
 				return erro;
@@ -71,8 +73,11 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 			}).collect(Collectors.toList());
 		
 		ApiValidationExceptionResponse resposta = new ApiValidationExceptionResponse();
+		
 		resposta.setStatus(HttpStatus.BAD_REQUEST.value());
+		
 		resposta.setMensagem(informacao);
+		
 		resposta.setValidacoes(erros);
 		
 		return handleExceptionInternal(ex, resposta, new HttpHeaders(), HttpStatus.BAD_REQUEST, request);

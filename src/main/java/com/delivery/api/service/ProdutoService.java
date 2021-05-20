@@ -21,11 +21,15 @@ public class ProdutoService {
 	private ProdutoRepository produtoRepository;
 	
 	public List<Produto> listar() {
+		
 		return produtoRepository.findAll();
+		
 	}
 	
 	public List<Produto> listarPorRestaurante(String uuid) {
-		return produtoRepository.selectByRestauranteUuid(uuid);
+		
+		return produtoRepository.selectByRestaurante(uuid);
+		
 	}
 	
 	public Produto buscar(Long id) {
@@ -34,7 +38,7 @@ public class ProdutoService {
 		
 		if (!produto.isPresent()) {
 			
-			throw new NotFoundException("Produto não encontrado");
+			throw new NotFoundException("Produto não encontrado!");
 			
 		}
 		
@@ -48,7 +52,7 @@ public class ProdutoService {
 		
 		if (produto == null) {
 			
-			throw new NotFoundException("Produto não encontrado");
+			throw new NotFoundException("Produto não encontrado!");
 			
 		}
 		
@@ -57,7 +61,9 @@ public class ProdutoService {
 	}
 	
 	public Produto salvar(Produto produto) {
+		
 		return produtoRepository.save(produto);
+		
 	}
 	
 	public Produto atualizar(String uuid, Produto produto) {
@@ -90,7 +96,7 @@ public class ProdutoService {
 			
 		} catch (EmptyResultDataAccessException ex) {
 			
-			throw new NotFoundException("Produto não encontrado");
+			throw new NotFoundException("Produto não encontrado!");
 				
 		}
 		

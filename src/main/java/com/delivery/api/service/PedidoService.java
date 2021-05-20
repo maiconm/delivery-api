@@ -19,15 +19,21 @@ public class PedidoService {
 	private PedidoRepository pedidoRepository;
 	
 	public List<Pedido> listar() {
+		
 		return pedidoRepository.findAll();
+		
 	}
 	
 	public List<Pedido> listarPorRestaurante(String uuid) {
+		
 		return pedidoRepository.selectByRestaurante(uuid);
+		
 	}
 	
 	public List<Pedido> listarPorCliente(String uuid) {
+		
 		return pedidoRepository.selectByCliente(uuid);
+		
 	}
 	
 	public Pedido buscar(Long id) {
@@ -36,7 +42,7 @@ public class PedidoService {
 		
 		if (!pedido.isPresent()) {
 			
-			throw new NotFoundException("Pedido não encontrado");
+			throw new NotFoundException("Pedido não encontrado!");
 			
 		}
 		
@@ -50,7 +56,7 @@ public class PedidoService {
 		
 		if (pedido == null) {
 			
-			throw new NotFoundException("Pedido não encontrado");
+			throw new NotFoundException("Pedido não encontrado!");
 			
 		}
 		
@@ -59,7 +65,9 @@ public class PedidoService {
 	}
 	
 	public Pedido salvar(Pedido pedido) {
+		
 		return pedidoRepository.save(pedido);
+		
 	}
 	
 	public boolean excluir(String uuid) {
@@ -72,7 +80,7 @@ public class PedidoService {
 			
 			if (ex.getClass().equals(EmptyResultDataAccessException.class)) {
 			
-				throw new NotFoundException("Pedido não encontrado");
+				throw new NotFoundException("Pedido não encontrado!");
 			
 			} else {
 				

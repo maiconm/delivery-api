@@ -26,12 +26,15 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.and()
 				.oauth2ResourceServer()
 					.opaqueToken();
+		
 	}
 	
 	@Bean
 	@Override
 	protected AuthenticationManager authenticationManager() throws Exception {
+		
 		return super.authenticationManager();
+		
 	}
 	
 }

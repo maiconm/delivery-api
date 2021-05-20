@@ -55,7 +55,9 @@ public class ProdutoController {
 
 		List<Produto> produtos = produtoService.listar();
 		
-		return produtoOutputResumidoMapper.mapearCollection(produtos);
+		List<ProdutoOutputResumidoDTO> produtosOutput = produtoOutputResumidoMapper.mapearCollection(produtos);
+		
+		return produtosOutput;
 		
 	}
 	
@@ -65,7 +67,9 @@ public class ProdutoController {
 
 		List<Produto> produtos = produtoService.listarPorRestaurante(uuid);
 		
-		return produtoOutputResumidoMapper.mapearCollection(produtos);
+		List<ProdutoOutputResumidoDTO> produtosOutput = produtoOutputResumidoMapper.mapearCollection(produtos);
+		
+		return produtosOutput;
 		
 	}
 	
@@ -84,11 +88,11 @@ public class ProdutoController {
 	
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public ProdutoOutputDTO adicionar(@RequestBody @Valid ProdutoInputDTO produtoInputDTO) {
+	public ProdutoOutputDTO adicionar(@RequestBody @Valid ProdutoInputDTO produtoInput) {
 	
-		Restaurante restaurante = restauranteService.buscarPorUUID(produtoInputDTO.getRestaurante());
+		Restaurante restaurante = restauranteService.buscarPorUUID(produtoInput.getRestaurante());
 
-		Produto produto = produtoIntputMapper.mapearEntity(produtoInputDTO);
+		Produto produto = produtoIntputMapper.mapearEntity(produtoInput);
 
 		produto.setRestaurante(restaurante);
 
@@ -101,9 +105,9 @@ public class ProdutoController {
 	}
 	
 	@PutMapping("/{uuid}")
-	public ProdutoOutputDTO alterar(@PathVariable String uuid, @RequestBody @Valid ProdutoInputDTO produtoInputDTO) {
+	public ProdutoOutputDTO alterar(@PathVariable String uuid, @RequestBody @Valid ProdutoInputDTO produtoInput) {
 		
-		Produto produto = produtoIntputMapper.mapearEntity(produtoInputDTO);
+		Produto produto = produtoIntputMapper.mapearEntity(produtoInput);
 		
 		produto = produtoService.atualizar(uuid, produto);
 		

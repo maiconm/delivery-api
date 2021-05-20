@@ -42,15 +42,18 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 			.and()
 				.withClient("checktoken")
 				.secret(cryptedPassword);
+		
 	}
 	
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+		
 		endpoints
 			.authenticationManager(authenticationManager)
 			.userDetailsService(userDetailService)
 			.reuseRefreshTokens(false)
-			.accessTokenConverter(jwtAccessTokenConverter() );
+			.accessTokenConverter(jwtAccessTokenConverter());
+		
 	}
 	
 	@Override

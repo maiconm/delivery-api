@@ -25,7 +25,7 @@ public class CEPService {
 			
 		} catch (RestClientException ex) {
 			
-			throw new NotFoundException("CEP não encontrado...");
+			throw new NotFoundException("CEP não encontrado!");
 
 		}
 		

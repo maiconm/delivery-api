@@ -22,7 +22,9 @@ public class ClienteService {
 	private ClienteRepository clienteRepository;
 	
 	public List<Cliente> listar() {
+		
 		return clienteRepository.findAll();
+		
 	}
 	
 	public Cliente buscar(Long id) {
@@ -31,7 +33,7 @@ public class ClienteService {
 		
 		if (!cliente.isPresent()) {
 			
-			throw new NotFoundException("Cliente não encontrado");
+			throw new NotFoundException("Cliente não encontrado!");
 			
 		}
 		
@@ -41,11 +43,11 @@ public class ClienteService {
 	
 	public Cliente buscarPorUUID(String uuid) {
 		
-		Cliente cliente = clienteRepository.selectByUuid(uuid);
+		Cliente cliente = clienteRepository.selectByUUID(uuid);
 		
 		if (cliente == null) {
 			
-			throw new NotFoundException("Cliente não encontrado");
+			throw new NotFoundException("Cliente não encontrado!");
 			
 		}
 		
@@ -54,7 +56,9 @@ public class ClienteService {
 	}
 	
 	public Cliente salvar(Cliente cliente) {
+		
 		return clienteRepository.save(cliente);
+		
 	}
 	
 	public Cliente atualizar(String uuid, Cliente cliente) {
@@ -85,13 +89,13 @@ public class ClienteService {
 		
 		try {
 			
-			clienteRepository.deleteByUuid(uuid);
+			clienteRepository.deleteByUUID(uuid);
 			
 		} catch (Exception ex) {
 			
 			if (ex.getClass().equals(EmptyResultDataAccessException.class)) {
 			
-				throw new NotFoundException("Cliente não encontrado");
+				throw new NotFoundException("Cliente não encontrado!");
 			
 			} else {
 				
